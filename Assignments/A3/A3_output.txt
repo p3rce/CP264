@@ -1,0 +1,179 @@
+------------------------------
+Start: Testing find_index_array:
+
+array = {5,15,25,35,45,55,65,75,85,95}
+
+find_index_array(array,10,5) = 0
+find_index_array(array,10,35) = 3
+find_index_array(array,10,95) = 9
+find_index_array(array,10,100) = -1
+find_index_array(array,5,75) = -1
+
+Error(find_index_array): invalid size
+find_index_array(array,0,75) = -1
+
+Error(find_index_array): invalid size
+find_index_array(array,11,75) = -1
+
+Error(find_index_array): array is NULL
+find_index_array(NULL,10,15) = -1
+
+End: Testing find_index_array
+------------------------------
+
+------------------------------
+Start: Testing find_max_index:
+
+array = {73,54,81,66,39,42,61,77,59,26}
+find_max_index(array,10) = 2
+
+array = {83,54,81,66,39,42,61,77,59,26}
+find_max_index(array,10) = 0
+
+array = {83,54,81,66,39,42,61,77,59,84}
+find_max_index(array,10) = 9
+
+array = {83,54,81,66,39,84,61,77,59,84}
+find_max_index(array,10) = 5
+
+Error(find_max_index): invalid size
+find_max_index(array,-2) = -1
+
+Error(find_max_index): invalid size
+find_max_index(array,15) = -1
+
+Error(find_max_index): array is NULL
+find_max_index(NULL,10) = -1
+
+End: Testing find_max_index
+------------------------------
+
+------------------------------
+Start: Testing get_array_size:
+
+get_array_size(array,ptr) = 6
+get_array_size(array,ptr) = 11
+get_array_size(array,ptr) = 1
+get_array_size(array,ptr) = 7
+get_array_size(NULL,ptr) = 0
+get_array_size(array,NULL) = 0
+
+End: Testing get_array_size
+------------------------------
+
+------------------------------
+Start: Testing find_mode:
+
+array = {15,20,20,15,20,35,35,15,45,20}
+mode = 20
+
+array = {35,35,15,45}
+mode = 35
+
+array = {15,20,20,15}
+mode = 15
+
+array = {45,20}
+mode = 45
+
+array = {20}
+mode = 20
+
+array = {20,15,20,35}
+mode = 20
+
+Error(find_mdoe): array is NULL
+Error(find_mode): invalid size
+Error(find_mode): invalid size
+
+End: Testing find_mode
+------------------------------
+
+------------------------------
+Start: Testing update_pointer:
+
+array = {15.9,21.6,34.8,9.2,17.4,29.0,32.3,8.7,28.4,18.5}
+threshold = 10.0
+ptr (before update) = 15.9
+ptr (after update) = 18.5
+
+array = {15.9,21.6,34.8,9.2,17.4,29.0,32.3,8.7,28.4,18.5}
+threshold = 30.1
+ptr (before update) = 15.9
+ptr (after update) = 32.3
+
+array = {21.6,34.8,9.2,17.4,29.0,32.3,8.7,28.4,18.5}
+threshold = 25.0
+ptr (before update) = 34.8
+ptr (after update) = 28.4
+
+array = {9.2,17.4}
+threshold = 8.2
+ptr (before update) = 9.2
+ptr (after update) = 17.4
+
+array = {17.4}
+threshold = 17.1
+ptr (before update) = 17.4
+ptr (after update) = 17.4
+
+array = {34.8,9.2,17.4,29.0,32.3,8.7,28.4,18.5}
+threshold = 50.2
+ptr (before update) = 29.0
+ptr (after update) = 29.0
+
+array = {9.2,17.4,29.0,32.3,8.7}
+threshold = 30.0
+ptr (before update) = NULL
+ptr (after update) = 32.3
+
+Error(update_pointer): array is NULL
+Error(update_pointer): invalid size
+Error(update_pointer): invalid ptr
+
+End: Testing update_pointer
+------------------------------
+
+------------------------------
+Start: Testing find_next:
+
+Case 1:
+array1 = {10,23,32}
+array2 = {9,11,17}
+ptr (before): 9
+ptr (before): 10
+
+Case 2:
+array1 = {10,23,32,44}
+array2 = {9,11,17,33}
+ptr (before): 11
+ptr (before): 17
+
+Case 3:
+array1 = {10,23,32,44,60}
+array2 = {9,11,17,33,47}
+ptr (before): 23
+ptr (before): 32
+
+Case 4:
+array1 = {10,23,32,44,60,63,67,69,71,88}
+array2 = {9,11,17,33,47,49,57,66,73,75}
+ptr (before): 75
+ptr (before): 88
+
+Case 5:
+array1 = {60,63,67,69,71}
+array2 = {47,49,57,66,73}
+ptr (before): 88
+ptr = NULL
+
+Case 6:Error Cases
+Error(find_next): one of the arrays is NULL
+Error(find_next): one of the arrays is NULL
+Error(find_next): invalid size
+Error(find_next): invalid size
+Error(find_next): pointer is NULL
+
+End: Testing find_next
+------------------------------
+

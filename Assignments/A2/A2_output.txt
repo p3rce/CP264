@@ -1,0 +1,384 @@
+------------------------------
+Testing Task 1: is_symmetric_matrix
+
+Case 1: empty Matrix:
+-    -    -    
+-    -    -    
+-    -    -    
+is_symmetric_matrix() = 1
+
+Case 2: single Element matrix:
+8    -    -    
+-    -    -    
+-    -    -    
+is_symmetric_matrix = 1
+
+Case 3: identity Matrix 3x3:
+1    0    0    -    -    
+0    1    0    -    -    
+0    0    1    -    -    
+-    -    -    -    -    
+-    -    -    -    -    
+is_symmetric_matrix = 1
+
+Case 4: valid symmetric matrix 3x3:
+1    7    3    -    -    
+7    4    8    -    -    
+3    8    6    -    -    
+-    -    -    -    -    
+-    -    -    -    -    
+is_symmetric_matrix = 1
+
+Case 5: invalid symmetric matrix 3x3:
+1    7    10   -    -    
+7    4    8    -    -    
+3    8    6    -    -    
+-    -    -    -    -    
+-    -    -    -    -    
+is_symmetric_matrix = 0
+
+Case 6: invalid Matrix:
+1    7    10   -    -    -    -    -    
+7    4    8    -    -    -    -    -    
+3    8    7    -    -    10   -    -    
+-    -    -    -    -    -    -    -    
+is_symmetric_matrix = 0
+
+Case 7: a vector:
+1    2    3    4    5    6    7    8    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+is_symmetric_matrix = 0
+
+Case 8: non-square matrix:
+1    0    0    1    -    
+0    1    0    0    -    
+0    0    1    1    -    
+-    -    -    -    -    
+-    -    -    -    -    
+is_symmetric_matrix = 0
+
+End of Task 1 Testing
+------------------------------
+
+------------------------------
+Testing Task 2: is_incremental_matrix
+
+Case 1: empty Matrix:
+-    -    
+-    -    
+is_incremental_matrix = 0
+
+Case 2: single element matrix:
+7    -    
+-    -    
+is_incremental_matrix = 1
+
+Case 3: valid incremental vector:
+7    9    10   10   -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+is_incremental_matrix = 1
+
+Case 4: valid 2x3 incremental matrix:
+1    5    7    -    
+8    8    10   -    
+-    -    -    -    
+-    -    -    -    
+is_incremental_matrix = 1
+
+Case 5: invalid 2x3 incremental matrix:
+1    5    7    -    
+6    8    10   -    
+-    -    -    -    
+-    -    -    -    
+is_incremental_matrix = 0
+
+Case 6: invalid matrix:
+1    5    7    -    
+8    8    10   -    
+10   11   -    -    
+-    -    -    -    
+is_incremental_matrix = 0
+
+Case 7: valid 3x3 is_incremental_matrix:
+1    5    7    -    
+8    8    10   -    
+10   11   11   -    
+-    -    -    -    
+is_incremental_matrix = 1
+
+Case 8: invalid 3x3 incremental matrix:
+1    5    7    -    
+8    8    7    -    
+10   11   11   -    
+-    -    -    -    
+is_incremental_matrix = 0
+
+End of Task 2 Testing
+------------------------------
+
+------------------------------
+Testing Task 3: create_triangular_matrix
+
+Error cases:
+Error(create_triangular_matrix): invalid length
+Error(create_triangular_matrix): invalid length
+Error(create_triangular_matrix): invalid corner
+Error(create_triangular_matrix): invalid side
+
+create_triangular_matrix(2,T,L,10):
+10   10   
+10   0    
+
+create_triangular_matrix(3,T,L,5):
+5    5    5    
+5    5    0    
+5    0    0    
+
+create_triangular_matrix(4,T,R,2):
+2    2    2    2    
+0    2    2    2    
+0    0    2    2    
+0    0    0    2    
+
+create_triangular_matrix(5,T,R,-6):
+-6   -6   -6   -6   -6   
+0    -6   -6   -6   -6   
+0    0    -6   -6   -6   
+0    0    0    -6   -6   
+0    0    0    0    -6   
+
+create_triangular_matrix(6,B,L,1):
+1    0    0    0    0    0    
+1    1    0    0    0    0    
+1    1    1    0    0    0    
+1    1    1    1    0    0    
+1    1    1    1    1    0    
+1    1    1    1    1    1    
+
+create_triangular_matrix(7,B,L,7):
+7    0    0    0    0    0    0    
+7    7    0    0    0    0    0    
+7    7    7    0    0    0    0    
+7    7    7    7    0    0    0    
+7    7    7    7    7    0    0    
+7    7    7    7    7    7    0    
+7    7    7    7    7    7    7    
+
+create_triangular_matrix(8,B,R,3):
+0    0    0    0    0    0    0    3    
+0    0    0    0    0    0    3    3    
+0    0    0    0    0    3    3    3    
+0    0    0    0    3    3    3    3    
+0    0    0    3    3    3    3    3    
+0    0    3    3    3    3    3    3    
+0    3    3    3    3    3    3    3    
+3    3    3    3    3    3    3    3    
+
+create_triangular_matrix(9,B,R,4):
+0    0    0    0    0    0    0    0    4    
+0    0    0    0    0    0    0    4    4    
+0    0    0    0    0    0    4    4    4    
+0    0    0    0    0    4    4    4    4    
+0    0    0    0    4    4    4    4    4    
+0    0    0    4    4    4    4    4    4    
+0    0    4    4    4    4    4    4    4    
+0    4    4    4    4    4    4    4    4    
+4    4    4    4    4    4    4    4    4    
+
+End of Task 3 Testing
+------------------------------
+
+------------------------------
+Testing Task 4: flip
+
+Case 0:
+Before:
+-    -    -    
+-    0    -    
+-    -    -    
+Error(flip_matrix): invalid matrix
+Flip horizontal:
+-    -    -    
+-    0    -    
+-    -    -    
+Error(flip_matrix): invalid matrix
+Flip vertical:
+-    -    -    
+-    0    -    
+-    -    -    
+
+Case 1:
+Before:
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+Flip horizontal:
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+Flip vertical:
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+-    -    -    -    
+
+Case 2:
+Before:
+1    0    0    
+0    1    0    
+0    0    1    
+Flip horizontal:
+0    0    1    
+0    1    0    
+1    0    0    
+Flip vertical:
+1    0    0    
+0    1    0    
+0    0    1    
+
+Case 3:
+Before:
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+Flip horizontal:
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+1    2    3    4    5    6    7    8    9    10   
+Flip vertical:
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+10   9    8    7    6    5    4    3    2    1    
+
+Case 4:
+Before:
+1    -    -    -    -    -    -    -    -    -    
+2    -    -    -    -    -    -    -    -    -    
+3    -    -    -    -    -    -    -    -    -    
+4    -    -    -    -    -    -    -    -    -    
+5    -    -    -    -    -    -    -    -    -    
+6    -    -    -    -    -    -    -    -    -    
+7    -    -    -    -    -    -    -    -    -    
+8    -    -    -    -    -    -    -    -    -    
+9    -    -    -    -    -    -    -    -    -    
+10   -    -    -    -    -    -    -    -    -    
+Flip horizontal:
+10   -    -    -    -    -    -    -    -    -    
+9    -    -    -    -    -    -    -    -    -    
+8    -    -    -    -    -    -    -    -    -    
+7    -    -    -    -    -    -    -    -    -    
+6    -    -    -    -    -    -    -    -    -    
+5    -    -    -    -    -    -    -    -    -    
+4    -    -    -    -    -    -    -    -    -    
+3    -    -    -    -    -    -    -    -    -    
+2    -    -    -    -    -    -    -    -    -    
+1    -    -    -    -    -    -    -    -    -    
+Flip vertical:
+10   -    -    -    -    -    -    -    -    -    
+9    -    -    -    -    -    -    -    -    -    
+8    -    -    -    -    -    -    -    -    -    
+7    -    -    -    -    -    -    -    -    -    
+6    -    -    -    -    -    -    -    -    -    
+5    -    -    -    -    -    -    -    -    -    
+4    -    -    -    -    -    -    -    -    -    
+3    -    -    -    -    -    -    -    -    -    
+2    -    -    -    -    -    -    -    -    -    
+1    -    -    -    -    -    -    -    -    -    
+
+Case 5:
+Before:
+1    2    3    4    5    6    7    8    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+Flip horizontal:
+1    2    3    4    5    6    7    8    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+Flip vertical:
+8    7    6    5    4    3    2    1    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+
+Case 6:
+Before:
+1    7    3    -    -    -    -    -    -    -    
+7    4    8    -    -    -    -    -    -    -    
+3    8    6    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+Flip horizontal:
+3    8    6    -    -    -    -    -    -    -    
+7    4    8    -    -    -    -    -    -    -    
+1    7    3    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+Flip vertical:
+6    8    3    -    -    -    -    -    -    -    
+8    4    7    -    -    -    -    -    -    -    
+3    7    1    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+-    -    -    -    -    -    -    -    -    -    
+
+End of Task 4 Testing
+------------------------------
+
